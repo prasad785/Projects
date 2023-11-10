@@ -1,0 +1,27 @@
+node('built-in') 
+    
+    
+    {
+    stage('ContntuousDownload') 
+    {
+        git branch: 'main', url: 'https://github.com/prasad785/Application.git'
+    }
+    stage('ContntuousBuild') 
+    {
+       sh 'mvn package'
+    }
+    stage('ContntuousDeploy') 
+    {
+          deploy adapters: [tomcat9(credentialsId: '85e57c85-0f8a-4049-8713-d57798b787f7', path: '', url: 'http://172.31.32.29:8080')], contextPath: 'happy', war: '**/*.war'
+    }
+    stage('ContntuousTeasting') 
+    {
+        git 'https://github.com/intelliqittrainings/FunctionalTesting.git'
+    
+        sh 'java -jar /var/lib/jenkins/workspace/pepline-3/testing.jar'
+    }
+    stage('ContntuousBuild') 
+    {
+       deploy adapters: [tomcat9(credentialsId: '85e57c85-0f8a-4049-8713-d57798b787f7', path: '', url: 'http://172.31.28.51:8080')], contextPath: 'applicastion', war: '**/*.war'
+    }
+}
