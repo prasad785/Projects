@@ -34,3 +34,8 @@ cd /var/lib/jenkins/workspace/pipline-2
 cclear
 nnclear
 clear
+clear
+cd /var/lib/jenkins/workspace/pipline-2
+ls 
+cd /var/lib/jenkins/workspace/pepline-3
+ls
