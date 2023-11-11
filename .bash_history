@@ -39,3 +39,18 @@ cd /var/lib/jenkins/workspace/pipline-2
 ls 
 cd /var/lib/jenkins/workspace/pepline-3
 ls
+clear
+ls 
+cd /var/lib/jenkins/workspace/Teasting-2
+l;s 
+ls 
+git add . 
+git config --global user.name "muni"
+git config --global user.email "muni@gmail.com"
+git --list 
+git add . 
+cd bin 
+ls 
+cat Testing.class 
+cd
+mvn archetype:generate 
